@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="flex: 1; text-align: center; font-size: 40px;">Hope- Help for needy</span> <div style="display: flex; gap: 10px;">  <a href="index.html">Home</a>
+          <a href="login1.html" class="auth-links">Login</a>
+          <a href="registration1.html" class="auth-links">Register</a>
+          <a href="#" class="logout-link" style="display: none;">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <div class="container">
+    <h1>Login</h1>
+
+    <form id="loginForm" action="donor_dashboard.html">
+        <label for="username">Username (Email):</label>
+        <input type="email" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="loginMessage"></p>
+
+    <script>
+    // Script for login form submission and validation (replace with your validation logic)
+    const loginForm = document.getElementById('loginForm');
+    const loginMessage = document.getElementById('loginMessage');
+
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      // Assuming you have a function to validate credentials (e.g., validateLogin)
+      const isValid = validateLogin(username, password);
+      if (isValid) {
+        // Check user type (donor or orphanage) based on validation logic
+        const userType = validateLogin(username, password).userType;;// Logic to determine user type from validation
+      if (userType === 'donor') {
+          window.location.href = "donorDashboard.html"; // Replace with actual donor dashboard path
+        } else if (userType === 'orphanage') {
+          window.location.href = "orphanageDashboard.html"; // Replace with actual orphanage dashboard path
+        } else {
+          loginMessage.textContent = 'Invalid User Type!';
+        }
+      } else {
+        loginMessage.textContent = 'Invalid Username or Password!';
+      }
+    });
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope - Donate Items</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html" class="auth-links">Login</a>
+            <a href="register.html" class="auth-links">Register</a>
+            <a href="donate.html">Donate Money</a>
+            <a href="donate_items.html">Donate Items</a>
+            <a href="requests.html">Requests</a>
+            <a href="dashboard.html" class="auth-links">Dashboard</a>
+            <a href="#" class="logout-link" style="display: none;">Logout</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Donate Items</h2>
+        <form id="donateItemsForm">
+            <input type="text" id="itemName" placeholder="Item Name" required>
+            <textarea id="description" placeholder="Description" required></textarea>
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <input type="text" id="location" placeholder="Your Location (Postal Code)" required>
+            <button type="submit">Donate</button>
+        </form>
+    </div>
+    <script src="js/donate_items.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

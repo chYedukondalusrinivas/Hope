@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="flex: 1; text-align: center; font-size: 40px;">Hope- Help for needy</span> <div style="display: flex; gap: 10px;">  <a href="index.html">Home</a>
+              <a href="login2.html" class="auth-links">Login</a>
+              <a href="#">About</a>
+              <a href="#" class="logout-link" style="display: none;">Logout</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+    <h1>Registration</h1>
+
+    <h2>Donor Registration</h2>
+    <form id="donorRegistrationForm">
+        <label for="donorName">Name:</label>
+        <input type="text" id="donorName" name="donorName" required>
+        <br>
+        <label for="donorEmail">Email:</label>
+        <input type="email" id="donorEmail" name="donorEmail" required>
+        <br>
+        <label for="donorPhone">Phone Number:</label>
+        <input type="tel" id="donorPhone" name="donorPhone"> <br>
+        <button type="submit">Register as Donor</button>
+    </form>
+
+    <h2>Orphanage Registration</h2>
+    <form id="orphanageRegistrationForm">
+        <label for="orphanageName">Orphanage Name:</label>
+        <input type="text" id="orphanageName" name="orphanageName" required>
+        <br>
+        <label for="orphanageAddress">Address:</label>
+        <textarea id="orphanageAddress" name="orphanageAddress" required></textarea>
+        <br>
+        <label for="orphanageContact">Contact Information:</label>
+        <input type="tel" id="orphanageContact" name="orphanageContact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> <br>
+        <button type="submit">Register Orphanage</button>
+    </form>
+
+    <script>
+    // Script for form validation (replace with your validation logic)
+    const donorForm = document.getElementById('donorRegistrationForm');
+    const orphanageForm = document.getElementById('orphanageRegistrationForm');
+
+    donorForm.addEventListener('submit', (event) => {
+      // Add validation checks for each field (e.g., check if email is valid)
+      // Prevent default form submission if validation fails
+      event.preventDefault();
+      // Assuming you have a function to store donor information (e.g., storeDonorInfo)
+      const donorInfo =  // Logic to get donor information from the form
+      storeDonorInfo(donorInfo);
+    });
+
+    orphanageForm.addEventListener('submit', (event) => {
+      // Add validation checks for each field (e.g., check if address is filled)
+      // Prevent default form submission if validation fails
+      event.preventDefault();
+      // Assuming you have a function to store orphanage information (e.g., storeOrphanageInfo)
+      const orphanageInfo =  // Logic to get orphanage information from the form
+      storeOrphanageInfo(orphanageInfo);
+    });
+    </script>
+    </div>
+</body>
+</html>
